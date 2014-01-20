@@ -17,7 +17,10 @@ end
 APP_RAKEFILE = File.expand_path("../spec/dummy/Rakefile", __FILE__)
 load 'rails/tasks/engine.rake'
 
-
-
 Bundler::GemHelper.install_tasks
 
+# Run rspec as default task
+# more info here: https://www.relishapp.com/rspec/rspec-core/docs/command-line/rake-task
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec)
+task :default => :spec
