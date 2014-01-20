@@ -7,11 +7,11 @@ require "rsvp/version"
 Gem::Specification.new do |s|
   s.name        = "rsvp"
   s.version     = Rsvp::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Rsvp."
-  s.description = "TODO: Description of Rsvp."
+  s.authors     = ["Ryan Ricard"]
+  s.email       = ["hi@ryanricard.com"]
+  s.homepage    = "github.com/ryanricard/rsvp"
+  s.summary     = "RSVP is a Rails mountable engine that collects RSVP responses online."
+  s.description = "RSVP is a Rails mountable engine that collects RSVP responses online."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
