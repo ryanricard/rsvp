@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rsvp</title>
+  <title>RSVP</title>
   <%= stylesheet_link_tag    "rsvp/application", media: "all" %>
   <%= javascript_include_tag "rsvp/application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if notice %>
+  <p><%= notice %></p>
+<% end %>
+
+<% if alert %>
+  <p><%= alert %></p>
+<% end %>
 
 <%= yield %>
 

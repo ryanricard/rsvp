@@ -1,0 +1,9 @@
+---
+r23:
+  id: 23
+  gender: Rsvp::Person::AdultMale
+  first_name: Jerad
+  last_name: Smith
+  suffix:
+  created_at: 2014-01-20 16:28:06.072440000 Z
+  updated_at: 2014-01-20 16:28:06.072440000 Z

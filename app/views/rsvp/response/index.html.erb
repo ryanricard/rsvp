@@ -1,0 +1,6 @@
+<%= form_for @invitation, :url => response_create_path, :method => :post do |f| %>
+  <%= f.label :rsvp_code, "Enter your RSVP Code" %>
+  <%= f.text_field :rsvp_code %>
+  <span>This code was provided with your invitation.</span>
+  <%= f.submit "Begin RSVP" %>
+<% end %>

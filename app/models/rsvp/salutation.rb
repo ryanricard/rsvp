@@ -1,5 +1,6 @@
 module Rsvp
   class Salutation < ActiveRecord::Base
+    attr_accessible :type
     belongs_to :family
 
     def template

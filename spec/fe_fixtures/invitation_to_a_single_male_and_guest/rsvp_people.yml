@@ -1,0 +1,9 @@
+---
+r5:
+  id: 5
+  gender: Rsvp::Person::AdultMale
+  first_name: Robert
+  last_name: Johnson
+  suffix:
+  created_at: 2014-01-20 16:28:05.848081000 Z
+  updated_at: 2014-01-20 16:28:05.848081000 Z

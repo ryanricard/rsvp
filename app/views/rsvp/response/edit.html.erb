@@ -1,0 +1,39 @@
+<%= render "rsvp/shared/error_messages", :target => @invitation.response %>
+
+<!-- TODO: Tell Amanda I changed the text below -->
+<p>Hi, <%= @invitation.family.salutation %>! Thank you for choosing to RSVP to our special day.</p>
+<p>Will you attend?</p>
+
+<ul>
+  <li><a href="#" class="rsvp-yes">Yes</a></li>
+  <li><a href="#" class="rsvp-no">No</a></li>
+</ul>
+
+<div class="rsvp-yes">
+  <%= form_for @invitation, :url => reply_path, :method => :put do |f| %>
+    <%= fields_for @invitation.build_response do |r| %>
+      <% if @invitation.total_invited > 1 %>
+        <%= r.label :total_attending %>
+        <%= r.select :total_attending, @invitation.total_invite_options %>
+      <% else %>
+        <%= r.hidden_field :total_attending, value: @invitation.total_invited %>
+      <% end %>
+      <%= r.label :email %>
+      <%= r.text_field :email %>
+      <%= r.label :comment %>
+      <%= r.text_area :comment %>
+    <% end %>
+    <%= f.button "Cancel", :type => :button %>
+    <%= f.submit "Submit RSVP" %>
+  <% end %>
+</div>
+
+<div class="rsvp-no">
+  <%= form_for @invitation, :url => reply_path, :method => :put do |f| %>
+    <p>No, I will not be attending.</p>
+    <%= f.button "Cancel", :type => :button %>
+    <%= f.submit "Submit RSVP" %>
+  <% end %>
+</div>
+
+<%= javascript_include_tag "rsvp/form_toggle.js" %>

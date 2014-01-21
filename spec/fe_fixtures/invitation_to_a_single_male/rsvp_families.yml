@@ -1,0 +1,10 @@
+---
+r15:
+  id: 15
+  street_1: 114 Main Street
+  street_2:
+  city: Bemidji
+  state: MN
+  postal_code: '56601'
+  created_at: 2014-01-20 16:28:06.069733000 Z
+  updated_at: 2014-01-20 16:28:06.069733000 Z

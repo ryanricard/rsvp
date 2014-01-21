@@ -12,3 +12,8 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+
+gem "jquery-rails", "~> 3.0.4"
+
+gem "cucumber-rails", :require => false
+gem "iron_fixture_extractor", :git => "git@github.com:ryanricard/iron_fixture_extractor.git"

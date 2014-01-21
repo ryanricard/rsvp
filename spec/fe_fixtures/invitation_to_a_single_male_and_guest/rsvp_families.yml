@@ -1,0 +1,10 @@
+---
+r3:
+  id: 3
+  street_1: 117 1st Ave
+  street_2:
+  city: Minneapolis
+  state: MN
+  postal_code: '55403'
+  created_at: 2014-01-20 16:28:05.845516000 Z
+  updated_at: 2014-01-20 16:28:05.845516000 Z

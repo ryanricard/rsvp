@@ -1,0 +1,28 @@
+---
+:extract_code: Rsvp::Invitation.includes(:family => [:members, :people, :salutation]).where("rsvp_salutations.type
+  = ?", "Rsvp::Salutation::SingleMaleAndGuest").first
+:name: :invitation_to_a_single_male_and_guest
+:model_names:
+- Rsvp::Invitation
+- Rsvp::Family
+- Rsvp::Member
+- Rsvp::Person
+- Rsvp::Salutation
+:row_counts:
+  Rsvp::Invitation: 1
+  Rsvp::Family: 1
+  Rsvp::Member: 1
+  Rsvp::Person: 1
+  Rsvp::Salutation: 1
+:table_names:
+- rsvp_invitations
+- rsvp_families
+- rsvp_members
+- rsvp_people
+- rsvp_salutations
+:table_name_to_model_name_hash:
+  rsvp_invitations: Rsvp::Invitation
+  rsvp_families: Rsvp::Family
+  rsvp_members: Rsvp::Member
+  rsvp_people: Rsvp::Person
+  rsvp_salutations: Rsvp::Salutation
