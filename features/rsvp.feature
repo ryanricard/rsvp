@@ -28,7 +28,7 @@ Feature: RSVP
         And I click the button "Begin RSVP"
       Then I should be located at "/rsvp/reply"
         # TODO: Figure out how to handle this text so salutation is not hardcoded
-        And I should see text stating "Hi, Mr. Mike Crawford! Thank you for choosing to RSVP to our special day."
+        And I should see text stating "Hi, Mr. Jerad Smith! Thank you for choosing to RSVP to our special day."
         And I should not see a Yes form displayed
         And I should not see a No form displayed
 
