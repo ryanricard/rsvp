@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Ryan Ricard"]
   s.email       = ["hi@ryanricard.com"]
   s.homepage    = "github.com/ryanricard/rsvp"
-  s.summary     = "RSVP is a Rails mountable engine that collects RSVP responses online."
-  s.description = "RSVP is a Rails mountable engine that collects RSVP responses online."
+  s.summary     = "Rsvp is a Rails mountable engine that collects RSVP responses online."
+  s.description = "Rsvp is a Rails mountable engine that collects RSVP responses online."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 

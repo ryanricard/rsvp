@@ -1,0 +1,12 @@
+Description:
+    Copies all Rsvp views to your application.
+
+Example:
+    rails generate rsvp:views
+
+    This will create:
+        app/views/rsvp/response/edit.html.erb
+        app/views/rsvp/response/index.html.erb
+        app/views/rsvp/response/no_confirmation.html.erb
+        app/views/rsvp/response/yes_confirmation.html.erb
+        app/views/rsvp/shared/_error_messages.html.erb

@@ -1,3 +1,23 @@
-= Rsvp
+# Rsvp
 
-This project rocks and uses MIT-LICENSE.
+Rsvp is a Rails mountable engine that collects RSVP responses online.
+
+## Installing Rsvp
+
+Add Rsvp to your Gemfile:
+
+`gem 'rsvp'`
+
+You will want to copy Rsvp views into your app with the following generator:
+
+`rails generate rsvp:views`
+
+## Contribute
+
+Run RSpec tests:
+
+`rspec`
+
+Run Cucumber features:
+
+`cucumber`
