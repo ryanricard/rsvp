@@ -1,11 +1,3 @@
-# class RsvpGenerator < Rails::Generators::Base
-#   source_root File.expand_path('../templates', __FILE__)
-
-#   class View
-
-#   end
-# end
-
 require 'rails/generators/base'
 
 module Rsvp
@@ -14,8 +6,8 @@ module Rsvp
 
     desc "Copies all Rsvp views to your application."
     def copy_views
+      directory "#{Rsvp::Engine.root}/app/views/layouts/rsvp", "#{Rails.root}/app/views/layouts/rsvp/."
       directory "#{Rsvp::Engine.root}/app/views/rsvp", "#{Rails.root}/app/views/rsvp/."
     end
-
   end
 end
