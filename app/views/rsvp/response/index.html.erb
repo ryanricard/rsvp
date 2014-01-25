@@ -1,6 +1,41 @@
-<%= form_for @invitation, :url => response_create_path, :method => :post do |f| %>
-  <%= f.label :rsvp_code, "Enter your RSVP Code" %>
-  <%= f.text_field :rsvp_code %>
-  <span>This code was provided with your invitation.</span>
-  <%= f.submit "Begin RSVP" %>
-<% end %>
+<%= render "rsvp/shared/error_messages", :target => @response %>
+
+<p>Hi, <%= @invitation.family.salutation %>! Thank you for choosing to RSVP to our special day.</p>
+<p>Will you attend?</p>
+
+<ul>
+  <li><a href="#" data-container="#yes-container" class="tab <%= 'active' if @response.is_yes? %>">Yes</a></li>
+  <li><a href="#" data-container="#no-container" class="tab <%= 'active' if @response.is_no? %>">No</a></li>
+</ul>
+
+<div id="yes-container" class="container">
+  <%= form_for @invitation, :url => response_index_path, :method => :post do |f| %>
+    <%= fields_for @response do |r| %>
+      <% if @invitation.total_invited > 1 %>
+        <%= r.label :total_attending %>
+        <%= r.select :total_attending, @invitation.total_invite_options %>
+      <% else %>
+        <%= r.hidden_field :total_attending, value: @invitation.total_invited %>
+      <% end %>
+      <%= r.label :email %>
+      <%= r.text_field :email %>
+      <%= r.label :comment %>
+      <%= r.text_area :comment %>
+    <% end %>
+    <%= f.button "Cancel", :type => :button %>
+    <%= f.submit "Submit RSVP" %>
+  <% end %>
+</div>
+
+<div id="no-container" class="container">
+  <%= form_for @invitation, :url => response_index_path, :method => :post do |f| %>
+    <%= fields_for @response do |r| %>
+      <%= r.hidden_field :total_attending, value: 0 %>
+    <% end %>
+    <p>No, I will not be attending.</p>
+    <%= f.button "Cancel", :type => :button %>
+    <%= f.submit "Submit RSVP" %>
+  <% end %>
+</div>
+
+<%= javascript_include_tag "rsvp/response_tabs.js" %>

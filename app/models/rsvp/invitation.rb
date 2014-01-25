@@ -2,7 +2,7 @@ module Rsvp
   class Invitation < ActiveRecord::Base
     attr_accessible :rsvp_code, :total_invited
     belongs_to :family
-    has_one :response
+    has_many :responses
 
     validates :rsvp_code, :presence => true, :length => { is: 7 }
     validates :total_invited, :inclusion => {:in => [1,2,3,4,5]}

@@ -6,7 +6,7 @@ module Rsvp
       Invitation.reflect_on_association(:family).macro.should eq(:belongs_to)
     end
     it "should have one response" do
-      Invitation.reflect_on_association(:response).macro.should eq(:has_one)
+      Invitation.reflect_on_association(:responses).macro.should eq(:has_many)
     end
   end
 end

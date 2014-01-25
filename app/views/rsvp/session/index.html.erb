@@ -1,0 +1,5 @@
+<%= form_tag sign_in_path, :method => :post do |f| %>
+  <%= label_tag :rsvp_code, "Enter your RSVP Code" %>
+  <%= text_field_tag :rsvp_code %>
+  <%= submit_tag "Begin RSVP" %>
+<% end %>

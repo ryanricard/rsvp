@@ -1,52 +1,33 @@
 module Rsvp
   class ResponseController < ApplicationController
+    before_filter :prepare_instance_vars, :only => [:index, :show, :confirmation]
 
-    skip_before_filter :require_session, :only => [:index, :create]
+    # GET /response
+    def index; end
 
-    # GET /rsvp
-    def index
-      @invitation = Invitation.new
-    end
-
-    # POST /rsvp
+    # POST /response
     def create
-      invitation = Invitation.find_by_rsvp_code(params[:invitation][:rsvp_code])
-      if invitation
-        session[:invitation_id] = invitation.id
-        redirect_to reply_path
+      @invitation = Invitation.find(session[:invitation_id])
+      @response = @invitation.responses.build(params[:response])
+      if @response.save
+        redirect_to confirmation_response_index_path
       else
-        flash.alert = "Oops!! The code you entered is not valid. Please try again."
-        redirect_to root_path
+        render :action => :index
       end
     end
 
-    # GET /rsvp/reply
-    def edit
+    # GET /response/overview
+    def show; end
+
+    # GET /response/confirmation
+    def confirmation; end
+
+    private
+
+    def prepare_instance_vars
       @invitation = Invitation.find(session[:invitation_id])
+      @invitation.responses.build unless @invitation.responses.any?
+      @response = @invitation.responses.last
     end
-
-    # PUT /rsvp/reply
-    def update
-      @invitation = Invitation.find(session[:invitation_id])
-
-      if @invitation.build_response(params[:response]).save
-        redirect_to confirmation_path
-      else
-        render :action => :edit
-      end
-    end
-
-    # GET /rsvp/confirmation
-    def confirmation
-      @invitation = Invitation.find(session[:invitation_id])
-      session[:invitation_id] = nil
-
-      if @invitation.response.total_attending.to_i > 0
-        render :yes_confirmation
-      else
-         render :no_confirmation
-      end
-    end
-
   end
 end

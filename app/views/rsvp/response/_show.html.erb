@@ -1,0 +1,10 @@
+<% if @response.is_yes? %>
+  <%= "Total attending: " + @response.total_attending.to_s %>
+  <%= "Email: " + @response.email.html_safe %>
+  <%= "Comment: " + @response.comment.html_safe %>
+<% else %>
+  <p>No, I will not be attending.</p>
+<% end %>
+
+<%= link_to "Change my response", response_index_path %>
+<%= link_to "I'm done!", sign_out_path %>
