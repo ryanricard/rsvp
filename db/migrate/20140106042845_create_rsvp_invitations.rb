@@ -7,5 +7,7 @@ class CreateRsvpInvitations < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :rsvp_invitations, :rsvp_code, :unique => true
   end
 end
