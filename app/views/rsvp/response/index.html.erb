@@ -1,4 +1,10 @@
-<%= render "rsvp/shared/error_messages", :target => @response %>
+<% if @response.errors.any? %>
+  <% @response.errors.full_messages.each do |msg| %>
+    <ul>
+      <li><%= msg %></li>
+    </ul>
+  <% end %>
+<% end %>
 
 <p>Hi, <%= @invitation.family.salutation %>! Thank you for choosing to RSVP to our special day.</p>
 <p>Will you attend?</p>
