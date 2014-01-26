@@ -10,7 +10,7 @@ Feature: Reply
       And I should not see a Yes form displayed
       And I should not see a No form displayed
 
-  # Yes form validation
+  # Yes form validation for a single person
   Scenario: An invitee submits a Yes response with an invalid email
     Given I have an invitation for a single person
       And I have began the RSVP process
@@ -21,7 +21,23 @@ Feature: Reply
       And I should see text stating "Email is invalid"
       And I should not see a No form displayed
       And I should see a Yes form displayed with my entered values
-    And I fill in "Email" with "john.locke@example.com"
+    When I fill in "Email" with "john.locke@example.com"
+      And I fill in "Comment" with "Amanda you are going to be the most beautiful bride ever!"
+      And I click the button "Submit RSVP"
+    Then I should be located at "/rsvp/response/confirmation"
+      And I should see text stating "Awesome!! We look forward to seeing you there!"
+      # And I should see text stating "You may change your RSVP anytime before [due date]"
+
+  # Yes form validation for a family
+  Scenario: An invitee submits a Yes response without selecting Total Attending
+    Given I have an invitation for a husband, wife, and family
+      And I have began the RSVP process
+    When I click the link "Yes"
+      And I click the button "Submit RSVP"
+    Then I should be located at "/rsvp/response"
+      And I should see text stating "Total attending can't be blank"
+    When I select the max number in the Total Attending drop down
+      And I fill in "Email" with "john.locke@example.com"
       And I fill in "Comment" with "Amanda you are going to be the most beautiful bride ever!"
       And I click the button "Submit RSVP"
     Then I should be located at "/rsvp/response/confirmation"
