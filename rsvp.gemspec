@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Rsvp::VERSION
   s.authors     = ["Ryan Ricard"]
   s.email       = ["hi@ryanricard.com"]
-  s.homepage    = "github.com/ryanricard/rsvp"
+  s.homepage    = "http://github.com/ryanricard/rsvp"
   s.summary     = "Rsvp is a Rails mountable engine that collects RSVP responses online."
   s.description = "Rsvp is a Rails mountable engine that collects RSVP responses online."
 
