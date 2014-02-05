@@ -7,21 +7,22 @@ require "rsvp/version"
 Gem::Specification.new do |s|
   s.name        = "rsvp"
   s.version     = Rsvp::VERSION
+  s.licenses    = ['MIT']
   s.authors     = ["Ryan Ricard"]
   s.email       = ["hi@ryanricard.com"]
   s.homepage    = "http://github.com/ryanricard/rsvp"
-  s.summary     = "Rsvp is a Rails mountable engine that collects RSVP responses online."
-  s.description = "Rsvp is a Rails mountable engine that collects RSVP responses online."
+  s.summary     = "Rsvp is a Rails mountable engine to collects online RSVP responses."
+  s.description = "Provides wrapping application necessary views and data structures to capture online RSVP responses."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency "rails", "~> 4.0.2"
+  s.add_runtime_dependency "rails", "~> 4.0", ">= 4.0.2"
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "sqlite3", "~> 0"
 
-  s.add_development_dependency "debugger"
-  s.add_development_dependency "rspec-rails"
-  s.add_development_dependency "capybara"
-  s.add_development_dependency "selenium-webdriver"
-  s.add_development_dependency "database_cleaner"
+  s.add_development_dependency "debugger", "~> 1.6", ">= 1.6.5"
+  s.add_development_dependency "rspec-rails", "~> 2.14", ">= 2.14.1"
+  s.add_development_dependency "capybara", "~> 2.2", ">= 2.2.1"
+  s.add_development_dependency "selenium-webdriver", "~> 2.39", ">= 2.39.0"
+  s.add_development_dependency "database_cleaner", "~> 1.2", ">= 1.2.0"
 end
