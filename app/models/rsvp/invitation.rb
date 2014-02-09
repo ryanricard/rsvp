@@ -4,9 +4,8 @@ module Rsvp
     belongs_to :family
     has_many :responses
 
-    validates :salutation_type, :presence => true
     validates :rsvp_code, :presence => true, :uniqueness => true, :length => { is: 7 }
-    validates :total_invited, :inclusion => 1..10
+    validates :total_invited, :presence => true, :inclusion => 1..10
 
     include SalutationMixin
 

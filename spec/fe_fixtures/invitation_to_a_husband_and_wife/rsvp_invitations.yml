@@ -3,6 +3,7 @@ r1:
   id: 1
   family_id: 1
   salutation_type: Rsvp::Salutation::HusbandAndWife
+  salutation: 'Mr. and Mrs. John Johnson'
   rsvp_code: HJXMMRX
   total_invited: 2
   created_at: 2014-01-20 16:28:05.795430000 Z

@@ -2,6 +2,7 @@
 r34:
   id: 34
   salutation_type: Rsvp::Salutation::HusbandAndWife
+  salutation: 'Mr. and Mrs. John Olson'
   street_1: 133 Penn Avenue
   street_2:
   city: Watertown

@@ -2,6 +2,7 @@
 r1:
   id: 1
   salutation_type: Rsvp::Salutation::HusbandAndWife
+  salutation: 'Mr. and Mrs. John Johnson'
   street_1: 1719 Hill Avenue
   street_2:
   city: Saint Paul

@@ -3,6 +3,7 @@ class CreateRsvpInvitations < ActiveRecord::Migration
     create_table :rsvp_invitations do |t|
       t.integer :family_id
       t.string :salutation_type, :limit => 50
+      t.string :salutation
       t.string :rsvp_code, :limit => 20
       t.integer :total_invited
 

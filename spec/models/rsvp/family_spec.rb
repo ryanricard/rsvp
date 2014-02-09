@@ -16,7 +16,7 @@ module Rsvp
       gender = Gender.subclasses.first
       family = Family.create(salutation_type: salutation)
       person = family.people.create({ :gender_type => gender.to_s })
-      person.gender_type.constantize.should eq(gender)
+      person.gender_type.should eq(gender)
     end
   end
   describe "Family compositions" do
@@ -35,10 +35,11 @@ module Rsvp
       expect(family.errors.get(:salutation_type)).to include("can't be blank")
     end
     it "should correctly instaniate a salutation" do
-      family = Family.new(salutation_type: Rsvp::Salutation::SingleMale)
+      person = Person.create(gender_type: Gender::AdultMale, first_name: "John", last_name: "Smith")
+      family = Family.new(salutation_type: Salutation::SingleMale)
+      family.people << person
       family.save(validate: false)
-      family.people.create(gender_type: Gender::AdultMale.to_s, first_name: "John", last_name: "Smith")
-      expect(family.salutation.to_s).to eq("Mr. John Smith")
+      expect(family.salutation).to eq("Mr. John Smith")
     end
   end
 end

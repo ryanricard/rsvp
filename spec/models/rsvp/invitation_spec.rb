@@ -45,11 +45,13 @@ module Rsvp
       expect(invitation.errors.get(:salutation_type)).to include("can't be blank")
     end
     it "should correctly instaniate a salutation" do
-      family = Family.new(validate: false)
+      family = Family.new()
       family.save(validate: false)
-      family.invitations.create(salutation_type: Salutation::SingleMaleAndGuest)
-      family.people.create(gender_type: Gender::AdultMale.to_s, first_name: "John", last_name: "Smith")
-      expect(family.invitations.first.salutation.to_s).to eq("Mr. John Smith and guest")
+      family.people.create(gender_type: Gender::AdultMale, first_name: "John", last_name: "Smith")
+      invitation = Invitation.new(salutation_type: Salutation::SingleMaleAndGuest)
+      family.invitations << invitation
+      invitation.save(validate: false)
+      expect(invitation.salutation).to eq("Mr. John Smith and Guest")
     end
   end
 end

@@ -2,6 +2,7 @@
 r15:
   id: 15
   salutation_type: Rsvp::Salutation::SingleMale
+  salutation: 'Mr. Jerad Smith'
   street_1: 114 Main Street
   street_2:
   city: Bemidji
