@@ -1,7 +1,7 @@
 ---
 r23:
   id: 23
-  gender: Rsvp::Person::AdultMale
+  gender_type: Rsvp::Gender::AdultMale
   first_name: Jerad
   last_name: Smith
   suffix:

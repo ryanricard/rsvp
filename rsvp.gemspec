@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.0", ">= 4.0.2"
 
-  s.add_development_dependency "sqlite3", "~> 1.3.8"
+  s.add_development_dependency "sqlite3", "~> 1.3"
 
   s.add_development_dependency "debugger", "~> 1.6", ">= 1.6.5"
   s.add_development_dependency "rspec-rails", "~> 2.14", ">= 2.14.1"

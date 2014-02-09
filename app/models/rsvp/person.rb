@@ -1,7 +1,6 @@
 module Rsvp
   class Person < ActiveRecord::Base
-    self.inheritance_column = :gender
-    attr_accessible :first_name, :gender, :last_name, :suffix
+    attr_accessible :first_name, :gender_type, :last_name, :suffix
     has_many :memberships, :class_name => "Member"
     has_many :families, :through => :memberships
 
@@ -10,11 +9,11 @@ module Rsvp
 
 
     def self.adult_males
-      where("gender = ?", Person::AdultMale.to_s)
+      where("gender_type = ?", Gender::AdultMale.to_s)
     end
 
     def self.adult_females
-      where("gender = ?", Person::AdultFemale.to_s)
+      where("gender_type = ?", Gender::AdultFemale.to_s)
     end
   end
 end

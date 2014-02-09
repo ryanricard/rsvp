@@ -1,7 +1,7 @@
 ---
 r5:
   id: 5
-  gender: Rsvp::Person::AdultMale
+  gender_type: Rsvp::Gender::AdultMale
   first_name: Robert
   last_name: Johnson
   suffix:

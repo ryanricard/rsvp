@@ -10,7 +10,7 @@ GIT
 PATH
   remote: .
   specs:
-    rsvp (0.0.2)
+    rsvp (0.1.0)
       rails (~> 4.0, >= 4.0.2)
 
 GEM
@@ -163,4 +163,4 @@ DEPENDENCIES
   rspec-rails (~> 2.14, >= 2.14.1)
   rsvp!
   selenium-webdriver (~> 2.39, >= 2.39.0)
-  sqlite3 (~> 1.3.8)
+  sqlite3 (~> 1.3)

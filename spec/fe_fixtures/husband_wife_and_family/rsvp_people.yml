@@ -1,7 +1,7 @@
 ---
 r52:
   id: 52
-  gender: Rsvp::Person::AdultMale
+  gender_type: Rsvp::Gender::AdultMale
   first_name: John
   last_name: Olson
   suffix:
@@ -9,7 +9,7 @@ r52:
   updated_at: 2014-01-20 16:28:06.419674000 Z
 r53:
   id: 53
-  gender: Rsvp::Person::AdultFemale
+  gender_type: Rsvp::Gender::AdultFemale
   first_name: Jane
   last_name: Olson
   suffix:

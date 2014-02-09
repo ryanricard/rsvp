@@ -48,7 +48,7 @@ module Rsvp
       family = Family.new(validate: false)
       family.save(validate: false)
       family.invitations.create(salutation_type: Salutation::SingleMaleAndGuest)
-      family.people.create(gender: Person::AdultMale.to_s, first_name: "John", last_name: "Smith")
+      family.people.create(gender_type: Gender::AdultMale.to_s, first_name: "John", last_name: "Smith")
       expect(family.invitations.first.salutation.to_s).to eq("Mr. John Smith and guest")
     end
   end

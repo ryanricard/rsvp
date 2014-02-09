@@ -1,7 +1,7 @@
 ---
 r1:
   id: 1
-  gender: Rsvp::Person::AdultMale
+  gender_type: Rsvp::Gender::AdultMale
   first_name: John
   last_name: Johnson
   suffix:
@@ -9,7 +9,7 @@ r1:
   updated_at: 2014-01-20 16:28:05.765545000 Z
 r2:
   id: 2
-  gender: Rsvp::Person::AdultFemale
+  gender_type: Rsvp::Gender::AdultFemale
   first_name: Jane
   last_name: Johnson
   suffix:
