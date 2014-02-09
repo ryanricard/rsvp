@@ -1,6 +1,7 @@
 class CreateRsvpFamilies < ActiveRecord::Migration
   def change
     create_table :rsvp_families do |t|
+      t.string :salutation_type, :limit => 50
       t.string :street_1, :limit => 75
       t.string :street_2, :limit => 75
       t.string :city, :limit => 50

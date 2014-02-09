@@ -2,6 +2,7 @@
 r3:
   id: 3
   family_id: 3
+  salutation_type: Rsvp::Salutation::SingleMaleAndGuest
   rsvp_code: XCRQBOD
   total_invited: 2
   created_at: 2014-01-20 16:28:05.851585000 Z

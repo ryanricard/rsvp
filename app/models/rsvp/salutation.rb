@@ -1,7 +1,11 @@
 module Rsvp
-  class Salutation < ActiveRecord::Base
-    attr_accessible :type
-    belongs_to :family
+  class Salutation
+    attr_accessor :family
+
+    def initialize(family)
+      raise "Salutation class initialization requires a family to be passed." if family.nil?
+      @family = family
+    end
 
     def template
       raise "Template not implemented in subclass."

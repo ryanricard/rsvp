@@ -1,6 +1,7 @@
 ---
 r34:
   id: 34
+  salutation_type: Rsvp::Salutation::HusbandAndWife
   street_1: 133 Penn Avenue
   street_2:
   city: Watertown

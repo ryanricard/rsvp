@@ -1,6 +1,7 @@
 ---
 r3:
   id: 3
+  salutation_type: Rsvp::Salutation::SingleMale
   street_1: 117 1st Ave
   street_2:
   city: Minneapolis
