@@ -10,7 +10,7 @@ GIT
 PATH
   remote: .
   specs:
-    rsvp (0.1.1)
+    rsvp (0.1.2)
       rails (~> 4.0, >= 4.0.2)
 
 GEM

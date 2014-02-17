@@ -6,6 +6,12 @@ module Rsvp
       g.test_framework :rspec
     end
 
+    config.to_prepare do
+      Dir.glob(Rails.root + "app/decorators/**/*_decorator*.rb").each do |c|
+        require_dependency(c)
+      end
+    end
+
     # Add engine db/migrate to paths so migrations run with wrapping application
     # Inspired by: http://pivotallabs.com/leave-your-migrations-in-your-rails-engines/
     initializer :append_migrations do |app|
