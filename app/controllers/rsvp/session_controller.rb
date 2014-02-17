@@ -20,6 +20,13 @@ module Rsvp
     # DELETE /session
     def destroy
       session[:invitation_id] = nil
+      redirect_after_destroy
+    end
+
+    private
+
+    # Allows for easy override from wrapping application
+    def redirect_after_destroy
       redirect_to root_path, notice: "Thank you for your response!"
     end
   end
