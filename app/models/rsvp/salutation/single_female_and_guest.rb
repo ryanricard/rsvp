@@ -4,7 +4,7 @@ module Rsvp
       family.people.adult_females.first
     end
     def template
-      "Ms. [[female__first_name]] [[female__last_name]] and Guest"
+      "Ms. [[female__first_name]] [[female__last_name]] and guest"
     end
   end
 end
