@@ -21,7 +21,11 @@ module Rsvp
       salutation = template
       template.scan(/\[\[\w*\]\]/).each do |expression|
         salutation_method, person_method = expression.tr("][", "").split(/__/)
-        salutation.gsub!(expression, send(salutation_method).send(person_method))
+        merge_data = send(salutation_method)
+        unless merge_data.class == String
+          merge_data = merge_data.send(person_method)
+        end
+        salutation.gsub!(expression, merge_data)
       end
       salutation
     end

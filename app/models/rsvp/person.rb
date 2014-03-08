@@ -17,6 +17,18 @@ module Rsvp
       where("gender_type = ?", Gender::AdultFemale.to_s)
     end
 
+    def self.young_females
+      where("gender_type = ?", Gender::YoungFemale.to_s)
+    end
+
+    def self.young_males
+      where("gender_type = ?", Gender::YoungMale.to_s)
+    end
+
+    def self.children
+      young_females + young_males
+    end
+
     def gender_type=(klass)
       write_attribute(:gender_type, klass.to_s)
     end
