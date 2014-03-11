@@ -16,6 +16,4 @@ Feature: AccessAttempt
       When I fill in a unknown RSVP Code
       Then I should not see text stating "You surpassed the attempt threshold."
       When I fill in a unknown RSVP Code
-      Then I should not see text stating "You surpassed the attempt threshold."
-      When I fill in a unknown RSVP Code
       Then I should see text stating "You surpassed the attempt threshold."
