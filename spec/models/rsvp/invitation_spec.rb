@@ -51,7 +51,7 @@ module Rsvp
       invitation = Invitation.new(salutation_type: Salutation::SingleMaleAndGuest)
       family.invitations << invitation
       invitation.save(validate: false)
-      expect(invitation.salutation).to eq("Mr. John Smith and Guest")
+      expect(invitation.salutation).to eq("Mr. John Smith and guest")
     end
   end
 end
