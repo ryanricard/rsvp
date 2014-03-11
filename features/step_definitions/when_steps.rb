@@ -36,3 +36,9 @@ end
 When(/^I fill in my RSVP Code$/) do
   fill_in "RSVP Code", :with => @invitation.rsvp_code
 end
+
+When(/^I fill in a unknown RSVP Code$/) do
+  step 'I visit "/rsvp"'
+  step 'I fill in "Enter your RSVP Code" with "unknown code"'
+  step 'I click the button "Begin RSVP"'
+end

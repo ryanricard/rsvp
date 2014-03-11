@@ -6,6 +6,10 @@ Then(/^I should see text stating "(.*?)"$/) do |value|
   expect(page).to have_text value
 end
 
+Then(/^I should not see text stating "(.*?)"$/) do |value|
+  expect(page).to_not have_text value
+end
+
 Then(/^I should not see a Yes form displayed$/) do
   page.should have_selector('#yes-container', visible: false)
 end
