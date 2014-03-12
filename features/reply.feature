@@ -36,7 +36,7 @@ Feature: Reply
       And I click the button "Submit RSVP"
     Then I should be located at "/rsvp/response"
       And I should see text stating "Total attending can't be blank"
-    When I select the max number in the Total Attending drop down
+    When I choose "4 people" attending
       And I fill in "Email" with "john.locke@example.com"
       And I fill in "Comment" with "Amanda you are going to be the most beautiful bride ever!"
       And I click the button "Submit RSVP"
@@ -134,7 +134,7 @@ Feature: Reply
       And I have began the RSVP process
     When I click the link "Yes"
     Then I should see a Total Attending drop down with options not exceeding my invites
-    When I select the max number in the Total Attending drop down
+    When I choose "4 people" attending
       And I click the button "Submit RSVP"
     Then I should see my Yes response in text
 
@@ -143,6 +143,6 @@ Feature: Reply
       And I have began the RSVP process
     When I click the link "Yes"
     Then I should see a Total Attending drop down with options not exceeding my invites
-    When I select the one less than the max number in the Total Attending drop down
+    When I choose "1 person" attending
       And I click the button "Submit RSVP"
     Then I should see my Yes response in text

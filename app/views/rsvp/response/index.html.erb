@@ -18,8 +18,17 @@
   <%= form_for @invitation, :url => response_index_path, :method => :post do |f| %>
     <%= fields_for @response do |r| %>
       <% if @invitation.total_invited > 1 %>
-        <%= r.label :total_attending %>
-        <%= r.select :total_attending, @invitation.total_invite_options, :include_blank => true %>
+        <%= label_tag :total_attending %>
+        <ul>
+          <% @invitation.total_invite_options.each do |invite_option| %>
+            <li>
+              <label>
+                <%= r.radio_button :total_attending, invite_option %>
+                <%= pluralize(invite_option, "person") %>
+              </label>
+            </li>
+          <% end %>
+        </li>
       <% else %>
         <%= r.hidden_field :total_attending, value: @invitation.total_invited %>
       <% end %>
