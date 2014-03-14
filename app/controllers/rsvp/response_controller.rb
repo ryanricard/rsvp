@@ -1,5 +1,6 @@
 module Rsvp
   class ResponseController < ApplicationController
+    before_filter :require_session
     before_filter :prepare_instance_vars, :only => [:index, :show, :confirmation]
 
     # GET /response

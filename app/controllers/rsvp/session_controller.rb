@@ -1,6 +1,6 @@
 module Rsvp
   class SessionController < ApplicationController
-    skip_before_filter :require_session, :only => [:index, :create]
+    before_filter :require_session, :only => [:destroy]
     before_filter :get_access_attempt
     before_filter :flash_message_when_locked, :only => [:index]
     before_filter :redirect_when_locked, :only => [:create]
