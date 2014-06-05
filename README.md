@@ -1,6 +1,6 @@
 ## Rsvp
 
-Nerds do find love. Rsvp is a Rails mountable engine that enables a wrapping applicationt to collection online RSVP responses.
+Nerds do find love. Rsvp is a Rails mountable engine that enables a wrapping application to collection online RSVP responses.
 
 ### Installing Rsvp
 
