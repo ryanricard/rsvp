@@ -6,7 +6,7 @@ Nerds do find love. Rsvp is a Rails mountable engine that enables a wrapping app
 
 Add Rsvp to your Gemfile and then bundle:
 
-`gem 'rsvp' '~> 0.0.1'`
+`gem 'rsvp' '~> 0.2.4'`
 
 Migrate your database:
 
@@ -24,7 +24,7 @@ Copies of Rsvp's standard views will be copied to `app/views/rsvp/.`
 
 Fork, branch, run tests, commit, and submit a pull request.
 
-Note, a Dummy Rails application is contained within `rspec/dummy/.` for testing; you will need to migrate your database from within this directory.
+Note, a Dummy Rails application is contained within `spec/dummy/.` for testing; you will need to migrate your database from within this directory.
 
 #### Executing Tests
 
